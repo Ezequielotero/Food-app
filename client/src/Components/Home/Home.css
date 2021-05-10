@@ -1,0 +1,24 @@
+.all1{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://images.pexels.com/photos/5824485/pexels-photo-5824485.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-size: cover;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+}
+.link{
+    grid-row: 2;
+    grid-column: 2;
+    align-self: center;
+    margin-bottom: 30px;
+}
+.find{
+    grid-row: 2;
+    grid-column: 1/4;
+    font-size: 4rem;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    align-self:flex-start;
+    margin: 0px;
+}

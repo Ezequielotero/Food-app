@@ -1,0 +1,21 @@
+.card{
+    height: 40vh;
+    width: 60vh;
+    background-color: rgba(255, 255, 255, 0.952);
+    border-radius: 8px;
+    margin-top: 10vh;
+}
+.title{
+    font-size: 1.6rem;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 900;
+    padding-top: 10px;
+}
+.img{
+    height: 30vh;
+    width: 35vh;
+    border-radius: 8px;
+    -webkit-box-shadow: 6px 9px 24px 10px rgba(158,156,158,0.42);
+-moz-box-shadow: 6px 9px 24px 10px rgba(158,156,158,0.42);
+box-shadow: 6px 9px 24px 10px rgba(158,156,158,0.42);
+}
