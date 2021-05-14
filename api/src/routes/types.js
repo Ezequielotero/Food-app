@@ -15,9 +15,9 @@ try {
           where: {
             name: diet,
           },
-        });
-      });
-    });
+        })
+      })
+    })
     let aux = await Diet.findAll();
     let allDiets = aux.map((e) => {
       return e.dataValues;

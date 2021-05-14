@@ -1,21 +1,51 @@
 .card{
     height: 40vh;
-    width: 60vh;
+    width: 50vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
     background-color: rgba(255, 255, 255, 0.952);
     border-radius: 8px;
     margin-top: 10vh;
+    -webkit-box-shadow: 6px 9px 24px 10px rgba(5,5,5,0.4);
+-moz-box-shadow: 6px 9px 24px 10px rgba(5,5,5,0.4);
+box-shadow: 6px 9px 24px 10px rgba(5,5,5,0.4);
+margin-left: 20px;
+margin-right: 20px;
 }
 .title{
+    grid-row: 1/2;
+    grid-column: 1/4;
     font-size: 1.6rem;
     font-family:Arial, Helvetica, sans-serif;
     font-weight: 900;
-    padding-top: 10px;
+    margin: 0px;
+    margin-bottom: 20px;
+    align-self: center;
+    color: white;
+    text-decoration: none;
 }
 .img{
-    height: 30vh;
-    width: 35vh;
+    grid-row: 2/4;
+    grid-column: 2/3;
+    width: 30vh;
+    margin-bottom: 20px;
     border-radius: 8px;
-    -webkit-box-shadow: 6px 9px 24px 10px rgba(158,156,158,0.42);
--moz-box-shadow: 6px 9px 24px 10px rgba(158,156,158,0.42);
-box-shadow: 6px 9px 24px 10px rgba(158,156,158,0.42);
+    transition: transform .2s;
+    -webkit-box-shadow: 6px 9px 24px 10px rgba(5,5,5,0.4);
+-moz-box-shadow: 6px 9px 24px 10px rgba(5,5,5,0.4);
+box-shadow: 6px 9px 24px 10px rgba(5,5,5,0.4);
+align-self: center;
+}
+.band{
+    grid-row: 1/2;
+    grid-column: 1/4;
+    margin-bottom: 20px;
+    background-image: url(https://images.pexels.com/photos/1484516/pexels-photo-1484516.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+    background-size: cover;
+    border-radius: 8px;
+}
+.img:hover{
+    transform: scale(1.2);
+    
 }

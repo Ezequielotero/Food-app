@@ -1,18 +1,21 @@
 import React, { useState, useEffect} from 'react'
-import { useDispatch,useSelector } from 'react-redux';
-import {randomRecipe} from '../../actions/actions'
+import {  useSelector, useDispatch } from "react-redux";
+import {getDetails} from '../../actions/actions'
+import {Link} from 'react-router-dom'
 import './Card.css'
-export default function Card() {
-    const random = useSelector(state => state.random)
-    let dispatch=useDispatch()
-    useEffect(()=>{
-        dispatch(randomRecipe())
-    },[])
-    console.log(random)
-    return (
-        <div className='card'>
-            <p className='title'>{random.title}</p>
-            <img className='img' src={random.img} alt="" />
-        </div>
-    )
-}
+export default function Card(props) {
+    let dispatch = useDispatch()
+     function handleClick(){
+         dispatch(getDetails(props.id))
+     }
+        return (
+            <div className='card'>
+                <div className='band'></div>
+                <Link className='title' to='/detail'>
+                <p onClick={handleClick}>{props.title}</p>
+                </Link>
+                <img className='img' src={props.img} alt="" />
+            </div>
+        )
+    }
+

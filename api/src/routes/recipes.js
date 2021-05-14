@@ -5,7 +5,7 @@ const {API_KEY}= process.env
 
 
 const url =
-  `https://api.spoonacular.com/recipes/complexSearch/?apiKey=${API_KEY}`;
+  `https://api.spoonacular.com/recipes/complexSearch/?apiKey=${API_KEY}&number=50`;
 
 router.get('/:idrecetas', async (req, res) => {
   let detalles = [];
@@ -19,9 +19,9 @@ router.get('/:idrecetas', async (req, res) => {
     dishTypes: resp.data.dishTypes,
     diets: resp.data.diets,
     summary: resp.data.summary,
-    healthy: resp.data.veryHealthy,
+    healthy: resp.data.healthScore,
     instructions: resp.data.instructions,
-    //falta el rating
+    score: resp.data.spoonacularScore
   });
   res.json(detalles);
   detalles = [];
@@ -32,7 +32,7 @@ router.get("/", async (req, res) => {
   let array = [];
   let resp = await axios.get(url);
 
-  try{
+  
   if (req.query.name) {
     for (let i = 0; i < resp.data.results.length; i++) {
       if (
@@ -46,12 +46,12 @@ router.get("/", async (req, res) => {
       }
     }if (array.length > 0) {
       res.send(array);
+      array=[]
+    }else{
+      res.status(404).send('Recipe not found');
     }
-  }
-}catch{
-  res.status(404).send('Recipe not found');
-}
-
+  } 
+else{
   for (let i = 0; i < resp.data.results.length; i++) {
     array.push({
       id: resp.data.results[i].id,
@@ -59,6 +59,7 @@ router.get("/", async (req, res) => {
       img: resp.data.results[i].image,
     });
   }
-  res.send(array);
+  res.send(array)
+}
 })
 module.exports = router;

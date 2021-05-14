@@ -21,6 +21,7 @@
     font-weight: 600;
     margin: 0px;
     align-self: flex-end;
+    color: white;
     
 }
 .create2{
@@ -28,6 +29,7 @@
     grid-row: 1/4;
     grid-column: 1/2;
     background-color: rgba(128, 128, 128, 0.904);
+    
 }
 .card1{
     grid-row:2/4;
@@ -44,5 +46,5 @@
     font-weight: 900;
     margin-top: 40px;
     align-self: center;
-    
+    color: white;
 }

@@ -1,7 +1,5 @@
 .grid{
-    width: 100vw;
+    width: 80vw;
     height: 90vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-}
+    margin-left: 10vw;
+} 

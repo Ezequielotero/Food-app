@@ -1,7 +1,7 @@
 import React from 'react'
 import Button from '../Sharedcomponents/Button'
 import {Link} from 'react-router-dom'
-import Card from '../Sharedcomponents/Card'
+import Card from '../Sharedcomponents/Randomcard'
 import './Home3.css'
 
 export default function Home3() {

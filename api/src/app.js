@@ -4,35 +4,10 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const routes = require('./routes/index.js');
 const axios = require('axios')
-
+const { API_KEY } = process.env;
 require('./db.js');
 
 const server = express();
-
-const sendGettemps = async () => {
-    var total=[]
-      const resp = await axios.get('https://api.spoonacular.com/recipes/complexSearch/?apiKey=bb6df4e1a07040758dba35bd3b983457');
-      for (let i = 0; i < resp.data.length; i++) {
-          if(resp.data[i].temperament){
-            var split=resp.data[i].temperament.split(','||',')
-            for (let j = 0; j < split.length; j++){
-              if(!total.includes(split[j])){
-                total.push(split[j])
-              }
-            }
-          }
-        }
-        for (let i = 0; i < total.length; i++) {
-          Temperament.findOrCreate({
-            where:{
-              name:total[i]
-            }
-          })
-          
-        }
-  }
-
-sendGettemps()
 
 server.name = 'API';
 
