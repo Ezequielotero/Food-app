@@ -8,8 +8,8 @@ import Button from '../../Sharedcomponents/Button'
 export default function Form() {
     const[state, setState]=useState({
 name:'',
-resume:'',
 rating:'',
+resume:'',
 healthy:'',
 steps:'',
     })
@@ -49,7 +49,7 @@ steps:'',
                         
                     })
                 }
-console.log(diet)
+console.log(state)
     return ( 
         <div className='grid2'>
             
@@ -58,12 +58,13 @@ console.log(diet)
             <p className='recipes'>CREATE YOUR RECIPES</p>
             <p className='recipes2'>AND</p>
             <p className='recipes3'>POST THEM ALL</p>
-            <input name='name' className='name' placeholder='name' onChange={handleChange} type="text" />
-                <textarea name="resume" className='resume' rows="50" cols="40" placeholder='Recipe desciption'></textarea>
-                <label>{state.rating}</label>
+                <input name='name' className='name' placeholder='name' onChange={handleChange} type="text" />
+                <label className='label2'>{state.rating}</label>
                 <input  type="range" min="0" max="100" name='rating'className='score' onChange={handleChange} />
-                <input name='healthy' className='healthy' placeholder='Health' onChange={handleChange} type="text" />
+                <label className='label'>{state.healthy}</label>
+                <input name='healthy' className='healthy' type="range" min="0" max="100" onChange={handleChange}  />
                 <textarea name='steps' placeholder='all the steps' className='steps' onChange={handleChange} type="text" />
+                <textarea name='resume' className='resume' rows="50" cols="40" placeholder='Recipe desciption' onChange={handleChange}/>
                 <select className='select' placeholder='type of diet' multiple name="diets"  onChange={handleChange2} >
                     {
                         alldiets.map((diet=>{
@@ -73,10 +74,10 @@ console.log(diet)
                     }
                 </select>
                 <button className='submit'>Post recipes</button>
-                {/* <Hola array={diet.diets}></Hola> */}
             </form>
             <div className='back'></div>
             <div>
+            <Hola array={diet.diets}></Hola>
             </div>
         </div>
     )

@@ -1,6 +1,7 @@
 .all{
-    width: 50vw;
+    width: 80vw;
    flex-wrap: wrap;
+   margin-left: 50px;
 }
 .diets {
     display: inline-flex;
@@ -11,7 +12,7 @@
     overflow: hidden;
     text-overflow: Ellipsis;
     width: 130px;
-    height: 50px;
+    height: 40px;
     justify-content: center;
     font-family:Arial, Helvetica, sans-serif;
     font-weight: 700;

@@ -4,10 +4,9 @@ const router = Router();
 const { v4: uuidv4 } = require('uuid');
 const {Recipe, Diet}=require('../db')
 const { Op } = require('sequelize');
-// const { getDiets } = require("../../../client/src/actions/actions");
 
 router.post('/', async(req,res)=>{
-const{name,resume,rating,healthy,steps,diet}=req.body
+const{name,resume,rating,healthy,steps,diets}=req.body
 console.log(req.body)
 let recipe = await Recipe.create({
     id:uuidv4(),
@@ -17,6 +16,12 @@ let recipe = await Recipe.create({
     healthy,
     steps,
 })
-getDiets.forEach
+diets.forEach(async d=>{
+    const dietdb = await Diet.findOne({
+        where:{name: { [Op.iLike]: `%${d}%`}}
+    })
+    recipe.addDiet(dietdb)
+})
+res.send('succes')
 })
 module.exports = router;

@@ -18,6 +18,9 @@ function App() {
       <Route path="/post">
         <Navbar></Navbar>
       </Route>
+      <Route path="/detail">
+        <Navbar></Navbar>
+      </Route>
       <Route exact path="/hola">
         <Page></Page>
       </Route>

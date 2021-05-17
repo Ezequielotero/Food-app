@@ -1,5 +1,4 @@
-import React, { useState, useEffect} from 'react'
-import {  useSelector, useDispatch } from "react-redux";
+import {   useDispatch } from "react-redux";
 import {getDetails} from '../../actions/actions'
 import {Link} from 'react-router-dom'
 import './Card.css'
@@ -15,6 +14,7 @@ export default function Card(props) {
                 <p onClick={handleClick}>{props.title}</p>
                 </Link>
                 <img className='img' src={props.img} alt="" />
+                <p className='dietss'>{props.diets}</p>
             </div>
         )
     }
